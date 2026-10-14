@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#23252b">
+  <title>Crunchyroll — Anime para assistir</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Crunchyroll início"><span class="brand-mark">◉</span><span>Crunchyroll</span></a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <button data-view="Novidade">Novidade</button>
+      <button data-view="Popular">Popular</button>
+      <button data-view="Transmissão">Transmissão</button>
+      <button id="categoriesBtn">Categorias <span class="caret">▾</span></button>
+      <button data-view="Jogos">Jogos</button>
+      <button id="newsBtn">Novidades <span class="caret">▾</span></button>
+    </nav>
+    <div class="toolbar">
+      <button id="searchToggle" class="icon-btn" aria-label="Pesquisar" title="Pesquisar">⌕</button>
+      <button id="savedToggle" class="icon-btn" aria-label="Minha lista" title="Minha lista">♧</button>
+      <button id="profileBtn" class="profile" title="Perfil">S</button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel" hidden>
+    <input id="searchInput" type="search" placeholder="Buscar animes..." autocomplete="off">
+    <button id="clearSearch" class="subtle-btn">Limpar</button>
+  </div>
+  <div class="dropdown" id="dropdown" hidden></div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <span class="eyebrow">SEU PRÓXIMO ANIME FAVORITO</span>
+        <h1>Uma nova aventura<br>começa agora.</h1>
+        <p>Descubra mundos incríveis, histórias inesquecíveis e seus próximos animes favoritos.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" id="exploreBtn">▶ Explorar animes</button>
+          <button class="secondary-btn" id="heroInfoBtn">ⓘ Saiba mais</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="notice" id="notice" role="status" aria-live="polite"></div>
+    <section class="shelf" id="trendingSection">
+      <div class="section-heading">
+        <div><h2 id="trendingTitle">Anime em tendência no Brasil</h2><p class="section-subtitle">O que todo mundo está assistindo</p></div>
+        <div class="shelf-controls"><button class="arrow" data-scroll="trending" data-dir="-1" aria-label="Anterior">‹</button><button class="arrow" data-scroll="trending" data-dir="1" aria-label="Próximo">›</button></div>
+      </div>
+      <div class="anime-row" id="trending"></div>
+    </section>
+
+    <section class="shelf" id="recommendedSection">
+      <div class="section-heading">
+        <div><h2 id="recommendedTitle">Inspirado por ti</h2><p class="section-subtitle">Mais histórias para colocar na sua lista</p></div>
+        <div class="shelf-controls"><button class="arrow" data-scroll="recommended" data-dir="-1" aria-label="Anterior">‹</button><button class="arrow" data-scroll="recommended" data-dir="1" aria-label="Próximo">›</button></div>
+      </div>
+      <div class="anime-row" id="recommended"></div>
+    </section>
+
+    <section class="shelf category-shelf">
+      <div class="section-heading"><div><h2>Explore por categoria</h2><p class="section-subtitle">Escolha o clima da próxima maratona</p></div></div>
+      <div class="category-chips" id="categoryChips">
+        <button data-category="Ação">Ação</button><button data-category="Aventura">Aventura</button><button data-category="Fantasia">Fantasia</button><button data-category="Comédia">Comédia</button><button data-category="Drama">Drama</button><button data-category="Mistério">Mistério</button><button data-category="Romance">Romance</button>
+      </div>
+    </section>
+    <footer><span class="footer-brand">◉ Crunchyroll</span><span>Projeto demonstrativo feito em HTML, CSS e JavaScript.</span><span>Imagens de pôsteres carregadas da internet.</span></footer>
+  </main>
+
+  <dialog id="animeDialog" class="anime-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Fechar">×</button>
+    <div class="dialog-art" id="dialogArt"></div>
+    <div class="dialog-copy">
+      <span class="eyebrow">DETALHES DO ANIME</span>
+      <h2 id="dialogTitle"></h2>
+      <p id="dialogMeta" class="dialog-meta"></p>
+      <p id="dialogDescription"></p>
+      <div class="dialog-actions"><button class="primary-btn" id="watchBtn">▶ Pesquisar trailer</button><button class="secondary-btn" id="dialogSaveBtn">＋ Minha lista</button></div>
+      <p class="dialog-footnote">Demonstração: o botão de trailer abre uma busca pelo título em uma nova aba.</p>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
